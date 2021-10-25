@@ -1,0 +1,1626 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;RCC???????             
+    2 00000000 40021000 
+                       RCC_BASE
+                               EQU              0x40021000
+    3 00000000 40021000 
+                       RCC_CR  EQU              (RCC_BASE + 0x00)
+    4 00000000 40021004 
+                       RCC_CFGR
+                               EQU              (RCC_BASE + 0x04)
+    5 00000000 40021008 
+                       RCC_CIR EQU              (RCC_BASE + 0x08)
+    6 00000000 4002100C 
+                       RCC_APB2RSTR
+                               EQU              (RCC_BASE + 0x0C)
+    7 00000000 40021010 
+                       RCC_APB1RSTR
+                               EQU              (RCC_BASE + 0x10)
+    8 00000000 40021014 
+                       RCC_AHBENR
+                               EQU              (RCC_BASE + 0x14)
+    9 00000000 40021018 
+                       RCC_APB2ENR
+                               EQU              (RCC_BASE + 0x18)
+   10 00000000 4002101C 
+                       RCC_APB1ENR
+                               EQU              (RCC_BASE + 0x1C)
+   11 00000000 40021020 
+                       RCC_BDCR
+                               EQU              (RCC_BASE + 0x20)
+   12 00000000 40021024 
+                       RCC_CSR EQU              (RCC_BASE + 0x24)
+   13 00000000         
+   14 00000000         ;AFIO???????            
+   15 00000000 40010000 
+                       AFIO_BASE
+                               EQU              0x40010000
+   16 00000000 40010000 
+                       AFIO_EVCR
+                               EQU              (AFIO_BASE + 0x00)
+   17 00000000 40010004 
+                       AFIO_MAPR
+                               EQU              (AFIO_BASE + 0x04)
+   18 00000000 40010008 
+                       AFIO_EXTICR1
+                               EQU              (AFIO_BASE + 0x08)
+   19 00000000 4001000C 
+                       AFIO_EXTICR2
+                               EQU              (AFIO_BASE + 0x0C)
+   20 00000000 40010010 
+                       AFIO_EXTICR3
+                               EQU              (AFIO_BASE + 0x10)
+   21 00000000 40010014 
+                       AFIO_EXTICR4
+                               EQU              (AFIO_BASE + 0x14)
+   22 00000000         
+   23 00000000         ;GPIOA???????              
+   24 00000000 40010800 
+                       GPIOA_BASE
+                               EQU              0x40010800
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+   25 00000000 40010800 
+                       GPIOA_CRL
+                               EQU              (GPIOA_BASE + 0x00)
+   26 00000000 40010804 
+                       GPIOA_CRH
+                               EQU              (GPIOA_BASE + 0x04)
+   27 00000000 40010808 
+                       GPIOA_IDR
+                               EQU              (GPIOA_BASE + 0x08)
+   28 00000000 4001080C 
+                       GPIOA_ODR
+                               EQU              (GPIOA_BASE + 0x0C)
+   29 00000000 40010810 
+                       GPIOA_BSRR
+                               EQU              (GPIOA_BASE + 0x10)
+   30 00000000 40010814 
+                       GPIOA_BRR
+                               EQU              (GPIOA_BASE + 0x14)
+   31 00000000 40010818 
+                       GPIOA_LCKR
+                               EQU              (GPIOA_BASE + 0x18)
+   32 00000000         
+   33 00000000         ;GPIO C???                   
+   34 00000000 40011000 
+                       GPIOC_BASE
+                               EQU              0x40011000
+   35 00000000 40011000 
+                       GPIOC_CRL
+                               EQU              (GPIOC_BASE + 0x00)
+   36 00000000 40011004 
+                       GPIOC_CRH
+                               EQU              (GPIOC_BASE + 0x04)
+   37 00000000 40011008 
+                       GPIOC_IDR
+                               EQU              (GPIOC_BASE + 0x08)
+   38 00000000 4001100C 
+                       GPIOC_ODR
+                               EQU              (GPIOC_BASE + 0x0C)
+   39 00000000 40011010 
+                       GPIOC_BSRR
+                               EQU              (GPIOC_BASE + 0x10)
+   40 00000000 40011014 
+                       GPIOC_BRR
+                               EQU              (GPIOC_BASE + 0x14)
+   41 00000000 40011018 
+                       GPIOC_LCKR
+                               EQU              (GPIOC_BASE + 0x18)
+   42 00000000         
+   43 00000000         ;??1??                       
+   44 00000000 40013800 
+                       USART1_BASE
+                               EQU              0x40013800
+   45 00000000 40013800 
+                       USART1_SR
+                               EQU              (USART1_BASE + 0x00)
+   46 00000000 40013804 
+                       USART1_DR
+                               EQU              (USART1_BASE + 0x04)
+   47 00000000 40013808 
+
+
+
+ARM Macro Assembler    Page 3 
+
+
+                       USART1_BRR
+                               EQU              (USART1_BASE + 0x08)
+   48 00000000 4001380C 
+                       USART1_CR1
+                               EQU              (USART1_BASE + 0x0c)
+   49 00000000 40013810 
+                       USART1_CR2
+                               EQU              (USART1_BASE + 0x10)
+   50 00000000 40013814 
+                       USART1_CR3
+                               EQU              (USART1_BASE + 0x14)
+   51 00000000 40013818 
+                       USART1_GTPR
+                               EQU              (USART1_BASE + 0x18)
+   52 00000000         
+   53 00000000         ;NVIC?????                
+   54 00000000 E000E000 
+                       NVIC_BASE
+                               EQU              0xE000E000
+   55 00000000 E000E010 
+                       NVIC_SETEN
+                               EQU              (NVIC_BASE + 0x0010)
+   56 00000000         ;SETENA?????????? 
+   57 00000000 E000E400 
+                       NVIC_IRQPRI
+                               EQU              (NVIC_BASE + 0x0400)
+   58 00000000         ;??????????????? 
+   59 00000000 E000ED08 
+                       NVIC_VECTTBL
+                               EQU              (NVIC_BASE + 0x0D08)
+   60 00000000         ;???????????     
+   61 00000000 E000ED0C 
+                       NVIC_AIRCR
+                               EQU              (NVIC_BASE + 0x0D0C)
+   62 00000000         ;?????????????????                                      
+                                 
+   63 00000000 E000E100 
+                       SETENA0 EQU              0xE000E100
+   64 00000000 E000E104 
+                       SETENA1 EQU              0xE000E104
+   65 00000000         
+   66 00000000         
+   67 00000000         ;SysTick?????            
+   68 00000000 E000E010 
+                       SysTick_BASE
+                               EQU              0xE000E010
+   69 00000000 E000E010 
+                       SYSTICKCSR
+                               EQU              (SysTick_BASE + 0x00)
+   70 00000000 E000E014 
+                       SYSTICKRVR
+                               EQU              (SysTick_BASE + 0x04)
+   71 00000000         
+   72 00000000         ;FLASH?????????     
+   73 00000000 40022000 
+                       FLASH_ACR
+                               EQU              0x40022000
+   74 00000000         
+   75 00000000         ;SCB_BASE           EQU    (SCS_BASE + 0x0D00) 
+
+
+
+ARM Macro Assembler    Page 4 
+
+
+   76 00000000         
+   77 00000000 20005000 
+                       MSP_TOP EQU              0x20005000
+   78 00000000         ;??????                
+   79 00000000 20004E00 
+                       PSP_TOP EQU              0x20004E00
+   80 00000000         ;???????             
+   81 00000000         
+   82 00000000 22000000 
+                       BitAlias_BASE
+                               EQU              0x22000000
+   83 00000000         ;?????????         
+   84 00000000 20000200 
+                       Flag1   EQU              0x20000200
+   85 00000000 22004000 
+                       b_flas  EQU              (BitAlias_BASE + (0x200*32) + (
+0*4))
+   86 00000000         ;??? 
+   87 00000000 22004004 
+                       b_05s   EQU              (BitAlias_BASE + (0x200*32) + (
+1*4))
+   88 00000000         ;??? 
+   89 00000000 20000204 
+                       DlyI    EQU              0x20000204
+   90 00000000 20000208 
+                       DlyJ    EQU              0x20000208
+   91 00000000 2000020C 
+                       DlyK    EQU              0x2000020C
+   92 00000000 20000210 
+                       SysTim  EQU              0x20000210
+   93 00000000         
+   94 00000000         
+   95 00000000         ;???? 
+   96 00000000 00000001 
+                       Bit0    EQU              0x00000001
+   97 00000000 00000002 
+                       Bit1    EQU              0x00000002
+   98 00000000 00000004 
+                       Bit2    EQU              0x00000004
+   99 00000000 00000008 
+                       Bit3    EQU              0x00000008
+  100 00000000 00000010 
+                       Bit4    EQU              0x00000010
+  101 00000000 00000020 
+                       Bit5    EQU              0x00000020
+  102 00000000 00000040 
+                       Bit6    EQU              0x00000040
+  103 00000000 00000080 
+                       Bit7    EQU              0x00000080
+  104 00000000 00000100 
+                       Bit8    EQU              0x00000100
+  105 00000000 00000200 
+                       Bit9    EQU              0x00000200
+  106 00000000 00000400 
+                       Bit10   EQU              0x00000400
+  107 00000000 00000800 
+                       Bit11   EQU              0x00000800
+  108 00000000 00001000 
+                       Bit12   EQU              0x00001000
+
+
+
+ARM Macro Assembler    Page 5 
+
+
+  109 00000000 00002000 
+                       Bit13   EQU              0x00002000
+  110 00000000 00004000 
+                       Bit14   EQU              0x00004000
+  111 00000000 00008000 
+                       Bit15   EQU              0x00008000
+  112 00000000 00010000 
+                       Bit16   EQU              0x00010000
+  113 00000000 00020000 
+                       Bit17   EQU              0x00020000
+  114 00000000 00040000 
+                       Bit18   EQU              0x00040000
+  115 00000000 00080000 
+                       Bit19   EQU              0x00080000
+  116 00000000 00100000 
+                       Bit20   EQU              0x00100000
+  117 00000000 00200000 
+                       Bit21   EQU              0x00200000
+  118 00000000 00400000 
+                       Bit22   EQU              0x00400000
+  119 00000000 00800000 
+                       Bit23   EQU              0x00800000
+  120 00000000 01000000 
+                       Bit24   EQU              0x01000000
+  121 00000000 02000000 
+                       Bit25   EQU              0x02000000
+  122 00000000 04000000 
+                       Bit26   EQU              0x04000000
+  123 00000000 08000000 
+                       Bit27   EQU              0x08000000
+  124 00000000 10000000 
+                       Bit28   EQU              0x10000000
+  125 00000000 20000000 
+                       Bit29   EQU              0x20000000
+  126 00000000 40000000 
+                       Bit30   EQU              0x40000000
+  127 00000000 80000000 
+                       Bit31   EQU              0x80000000
+  128 00000000         
+  129 00000000         
+  130 00000000         ;??? 
+  131 00000000                 AREA             RESET, DATA, READONLY
+  132 00000000 20005000        DCD              MSP_TOP     ;?????? 
+  133 00000004 00000000        DCD              Start       ;???? 
+  134 00000008 00000000        DCD              NMI_Handler ;NMI Handler 
+  135 0000000C 00000000        DCD              HardFault_Handler ;Hard Fault H
+                                                            andler 
+  136 00000010 00000000        DCD              0
+  137 00000014 00000000        DCD              0
+  138 00000018 00000000        DCD              0
+  139 0000001C 00000000        DCD              0
+  140 00000020 00000000        DCD              0
+  141 00000024 00000000        DCD              0
+  142 00000028 00000000        DCD              0
+  143 0000002C 00000000        DCD              0
+  144 00000030 00000000        DCD              0
+  145 00000034 00000000        DCD              0
+  146 00000038 00000000        DCD              0
+  147 0000003C 00000000        DCD              SysTick_Handler 
+
+
+
+ARM Macro Assembler    Page 6 
+
+
+                                                            ;SysTick Handler 
+  148 00000040 00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00            SPACE            20          ;????20??          
+                                                                   
+  149 00000054         ;??? 
+  150 00000054                 AREA             |.text|, CODE, READONLY
+  151 00000000         ;????? 
+  152 00000000                 ENTRY
+  153 00000000         ;??????????? 
+  154 00000000         Start
+  155 00000000         ;?????? 
+  156 00000000 4859            ldr              r0, =RCC_CR
+  157 00000002 6801            ldr              r1, [r0]
+  158 00000004 F441 3180       orr              r1, #Bit16
+  159 00000008 6001            str              r1, [r0]
+  160 0000000A         ;????????  
+  161 0000000A         ;????8M?? 
+  162 0000000A         
+  163 0000000A         ClkOk
+  164 0000000A 6801            ldr              r1, [r0]
+  165 0000000C F411 3100       ands             r1, #Bit17
+  166 00000010 D0FB            beq              ClkOk
+  167 00000012         ;???????? 
+  168 00000012 6801            ldr              r1,[r0]
+  169 00000014 F441 3100       orr              r1,#Bit17
+  170 00000018 6001            str              r1,[r0]
+  171 0000001A         ;FLASH??? 
+  172 0000001A 4854            ldr              r0, =FLASH_ACR
+  173 0000001C F04F 0132       mov              r1, #0x00000032
+  174 00000020 6001            str              r1, [r0]
+  175 00000022         
+  176 00000022         ;??PLL??????7,HSE????? 
+  177 00000022 4853            ldr              r0, =RCC_CFGR
+  178 00000024 6801            ldr              r1, [r0]
+  179 00000026 F441 11EA       orr              r1, #(Bit18 :OR: Bit19 :OR: Bit
+20 :OR: Bit16 :OR: Bit14)
+  180 0000002A F441 6180       orr              r1, #Bit10
+  181 0000002E 6001            str              r1, [r0]
+  182 00000030         ;??PLL??? 
+  183 00000030 484D            ldr              r0, =RCC_CR
+  184 00000032 6801            ldr              r1, [r0]
+  185 00000034 F041 7180       orr              r1, #Bit24
+  186 00000038 6001            str              r1, [r0]
+  187 0000003A         PllOk
+  188 0000003A 6801            ldr              r1, [r0]
+  189 0000003C F011 7100       ands             r1, #Bit25
+  190 00000040 D0FB            beq              PllOk
+  191 00000042         ;??PLL???????? 
+  192 00000042 484B            ldr              r0, =RCC_CFGR
+  193 00000044 6801            ldr              r1, [r0]
+  194 00000046 F441 11EA       orr              r1, #(Bit18 :OR: Bit19 :OR: Bit
+20 :OR: Bit16 :OR: Bit14)
+  195 0000004A F441 6180       orr              r1, #Bit10
+  196 0000004E F041 0102       orr              r1, #Bit1
+
+
+
+ARM Macro Assembler    Page 7 
+
+
+  197 00000052 6001            str              r1, [r0]
+  198 00000054         ;??RCC???? 
+  199 00000054 4847            ldr              r0, =RCC_APB2ENR
+  200 00000056 F244 0114       mov              r1, #(Bit14 :OR: Bit4 :OR: Bit2
+)
+  201 0000005A 6001            str              r1, [r0]
+  202 0000005C         
+  203 0000005C         
+  204 0000005C         ;PA9??0??? 
+  205 0000005C 4846            ldr              r0, =GPIOA_CRH
+  206 0000005E 6801            ldr              r1, [r0]
+  207 00000060 F041 0130       orr              r1, #(Bit4 :OR: Bit5)
+  208 00000064         ;PA.9????,????50MHz  
+  209 00000064 F041 0180       orr              r1, #Bit7
+  210 00000068 F021 0140       and              r1, #~Bit6
+  211 0000006C         ;10:?????????? 
+  212 0000006C 6001            str              r1, [r0]
+  213 0000006E         
+  214 0000006E         
+  215 0000006E 4843            ldr              r0, =USART1_BRR
+  216 00000070 F240 2171       mov              r1, #0x271
+  217 00000074 6001            str              r1, [r0]
+  218 00000076         ;?????-> 115200 
+  219 00000076         
+  220 00000076 4842            ldr              r0, =USART1_CR1
+  221 00000078 F242 010C       mov              r1, #0x200c
+  222 0000007C 6001            str              r1, [r0]
+  223 0000007E         ;USART????? ??????? 
+  224 0000007E         ;71 02 00 00   2c 20 00 00 
+  225 0000007E         
+  226 0000007E         ;AFIO ????             
+  227 0000007E         ;Systick ???? 
+  228 0000007E 4841            ldr              r0, =SYSTICKRVR
+  229 00000080         ;Systick??? 
+  230 00000080 F242 3128       mov              r1, #9000
+  231 00000084 6001            str              r1, [r0]
+  232 00000086 4840            ldr              r0, =SYSTICKCSR
+  233 00000088         ;??,??Systick 
+  234 00000088 F04F 0103       mov              r1, #0x03
+  235 0000008C 6001            str              r1, [r0]
+  236 0000008E         
+  237 0000008E         ;??????????? 
+  238 0000008E 483F            ldr              r0, =PSP_TOP
+  239 00000090         ;??????? 
+  240 00000090 F380 8809       msr              psp, r0
+  241 00000094 F04F 0003       mov              r0, #3
+  242 00000098 F380 8814       msr              control, r0
+  243 0000009C         
+  244 0000009C         ;???SRAM??? 
+  245 0000009C F04F 0100       mov              r1, #0
+  246 000000A0 483B            ldr              r0, =Flag1
+  247 000000A2 6001            str              r1, [r0]
+  248 000000A4 483B            ldr              r0, =DlyI
+  249 000000A6 6001            str              r1, [r0]
+  250 000000A8 483B            ldr              r0, =DlyJ
+  251 000000AA 6001            str              r1, [r0]
+  252 000000AC 483B            ldr              r0, =DlyK
+  253 000000AE 6001            str              r1, [r0]
+  254 000000B0 483B            ldr              r0, =SysTim
+
+
+
+ARM Macro Assembler    Page 8 
+
+
+  255 000000B2 6001            str              r1, [r0]
+  256 000000B4         
+  257 000000B4         ;???            
+  258 000000B4         main
+  259 000000B4 4836            ldr              r0, =Flag1
+  260 000000B6 6801            ldr              r1, [r0]
+  261 000000B8 F011 0F02       tst              r1, #Bit1
+  262 000000BC         ;SysTick??0.5s,??bit 1 
+  263 000000BC D0FA            beq              main        ;0.5s???????       
+                                                            
+  264 000000BE         
+  265 000000BE         ;0.5s?????? 
+  266 000000BE 4839            ldr              r0, =b_05s
+  267 000000C0         ;??????0.5s?? 
+  268 000000C0 F04F 0100       mov              r1, #0
+  269 000000C4 6001            str              r1, [r0]
+  270 000000C6         
+  271 000000C6 F04F 0048       mov              r0, #'H'
+  272 000000CA F000 F831       bl               send_a_char
+  273 000000CE         
+  274 000000CE F04F 0065       mov              r0, #'e'
+  275 000000D2 F000 F82D       bl               send_a_char
+  276 000000D6         
+  277 000000D6 F04F 006C       mov              r0, #'l'
+  278 000000DA F000 F829       bl               send_a_char
+  279 000000DE         
+  280 000000DE F04F 006C       mov              r0, #'l'
+  281 000000E2 F000 F825       bl               send_a_char
+  282 000000E6         
+  283 000000E6 F04F 006F       mov              r0, #'o'
+  284 000000EA F000 F821       bl               send_a_char
+  285 000000EE         
+  286 000000EE F04F 0020       mov              r0, #' '
+  287 000000F2 F000 F81D       bl               send_a_char
+  288 000000F6         
+  289 000000F6 F04F 0057       mov              r0, #'W'
+  290 000000FA F000 F819       bl               send_a_char
+  291 000000FE         
+  292 000000FE F04F 0069       mov              r0, #'i'
+  293 00000102 F000 F815       bl               send_a_char
+  294 00000106         
+  295 00000106 F04F 006E       mov              r0, #'n'
+  296 0000010A F000 F811       bl               send_a_char
+  297 0000010E         
+  298 0000010E F04F 0064       mov              r0, #'d'
+  299 00000112 F000 F80D       bl               send_a_char
+  300 00000116         
+  301 00000116 F04F 006F       mov              r0, #'o'
+  302 0000011A F000 F809       bl               send_a_char
+  303 0000011E         
+  304 0000011E F04F 0077       mov              r0, #'w'
+  305 00000122 F000 F805       bl               send_a_char
+  306 00000126         
+  307 00000126 F04F 000A       mov              r0, #'\n'
+  308 0000012A F000 F801       bl               send_a_char
+  309 0000012E         
+  310 0000012E E7C1            b                main
+  311 00000130         
+  312 00000130         
+
+
+
+ARM Macro Assembler    Page 9 
+
+
+  313 00000130         
+  314 00000130         ;??? ??1?????? 
+  315 00000130         send_a_char
+  316 00000130 B40F            push             {r0 - r3}
+  317 00000132 4A1D            ldr              r2, =USART1_DR
+  318 00000134 6010            str              r0, [r2]
+  319 00000136         b1
+  320 00000136 4A1D            ldr              r2, =USART1_SR
+  321 00000138 6812            ldr              r2, [r2]
+  322 0000013A F012 0F40       tst              r2, #0x40
+  323 0000013E D0FA            beq              b1
+  324 00000140         ;????(Transmission complete)?? 
+  325 00000140 BC0F            pop              {r0 - r3}
+  326 00000142 4770            bx               lr
+  327 00000144         
+  328 00000144         ;???? 
+  329 00000144         NMI_Handler
+  330 00000144 4770            bx               lr
+  331 00000146         
+  332 00000146         
+  333 00000146         HardFault_Handler
+  334 00000146 4770            bx               lr
+  335 00000148         
+  336 00000148         SysTick_Handler
+  337 00000148 4815            ldr              r0, =SysTim
+  338 0000014A 6801            ldr              r1, [r0]
+  339 0000014C F101 0101       add              r1, #1
+  340 00000150 6001            str              r1, [r0]
+  341 00000152 F5B1 7FFA       cmp              r1, #500
+  342 00000156 D306            bcc              TickExit
+  343 00000158 F04F 0100       mov              r1, #0
+  344 0000015C 6001            str              r1, [r0]
+  345 0000015E 4811            ldr              r0, =b_05s
+  346 00000160         ;????500? ????????? ??0.5s??? 
+  347 00000160         ;?????1 
+  348 00000160 F04F 0101       mov              r1, #1
+  349 00000164 6001            str              r1, [r0]
+  350 00000166         TickExit
+  351 00000166 4770            bx               lr
+  352 00000168         
+  353 00000168                 ALIGN
+  354 00000168         ;????????NOP??,???????????????? 
+  355 00000168                 END
+              40021000 
+              40022000 
+              40021004 
+              40021018 
+              40010804 
+              40013808 
+              4001380C 
+              E000E014 
+              E000E010 
+              20004E00 
+              20000200 
+              20000204 
+              20000208 
+              2000020C 
+              20000210 
+              22004004 
+
+
+
+ARM Macro Assembler    Page 10 
+
+
+              40013804 
+              40013800 
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
+ork --depend=.\objects\main.d -o.\objects\main.o -ID:\Users\11690\AppData\Local
+\Am\Packs\Keil\STM32F1xx_DFP\2.1.0\Device\Include -ID:\Keil_v5\ARM\CMSIS\Includ
+e --predefine="__UVISION_VERSION SETA 531" --predefine="STM32F10X_MD SETA 1" --
+list=.\listings\main.lst main.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 131 in file main.s
+   Uses
+      None
+Comment: RESET unused
+1 symbol
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+.text 00000000
+
+Symbol: .text
+   Definitions
+      At line 150 in file main.s
+   Uses
+      None
+Comment: .text unused
+ClkOk 0000000A
+
+Symbol: ClkOk
+   Definitions
+      At line 163 in file main.s
+   Uses
+      At line 166 in file main.s
+Comment: ClkOk used once
+HardFault_Handler 00000146
+
+Symbol: HardFault_Handler
+   Definitions
+      At line 333 in file main.s
+   Uses
+      At line 135 in file main.s
+Comment: HardFault_Handler used once
+NMI_Handler 00000144
+
+Symbol: NMI_Handler
+   Definitions
+      At line 329 in file main.s
+   Uses
+      At line 134 in file main.s
+Comment: NMI_Handler used once
+PllOk 0000003A
+
+Symbol: PllOk
+   Definitions
+      At line 187 in file main.s
+   Uses
+      At line 190 in file main.s
+Comment: PllOk used once
+Start 00000000
+
+Symbol: Start
+   Definitions
+      At line 154 in file main.s
+   Uses
+      At line 133 in file main.s
+Comment: Start used once
+SysTick_Handler 00000148
+
+Symbol: SysTick_Handler
+   Definitions
+      At line 336 in file main.s
+   Uses
+      At line 147 in file main.s
+Comment: SysTick_Handler used once
+TickExit 00000166
+
+Symbol: TickExit
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Relocatable symbols
+
+   Definitions
+      At line 350 in file main.s
+   Uses
+      At line 342 in file main.s
+Comment: TickExit used once
+b1 00000136
+
+Symbol: b1
+   Definitions
+      At line 319 in file main.s
+   Uses
+      At line 323 in file main.s
+Comment: b1 used once
+main 000000B4
+
+Symbol: main
+   Definitions
+      At line 258 in file main.s
+   Uses
+      At line 263 in file main.s
+      At line 310 in file main.s
+
+send_a_char 00000130
+
+Symbol: send_a_char
+   Definitions
+      At line 315 in file main.s
+   Uses
+      At line 272 in file main.s
+      At line 275 in file main.s
+      At line 278 in file main.s
+      At line 281 in file main.s
+      At line 284 in file main.s
+      At line 287 in file main.s
+      At line 290 in file main.s
+      At line 293 in file main.s
+      At line 296 in file main.s
+      At line 299 in file main.s
+      At line 302 in file main.s
+      At line 305 in file main.s
+      At line 308 in file main.s
+
+11 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+AFIO_BASE 40010000
+
+Symbol: AFIO_BASE
+   Definitions
+      At line 15 in file main.s
+   Uses
+      At line 16 in file main.s
+      At line 17 in file main.s
+      At line 18 in file main.s
+      At line 19 in file main.s
+      At line 20 in file main.s
+      At line 21 in file main.s
+
+AFIO_EVCR 40010000
+
+Symbol: AFIO_EVCR
+   Definitions
+      At line 16 in file main.s
+   Uses
+      None
+Comment: AFIO_EVCR unused
+AFIO_EXTICR1 40010008
+
+Symbol: AFIO_EXTICR1
+   Definitions
+      At line 18 in file main.s
+   Uses
+      None
+Comment: AFIO_EXTICR1 unused
+AFIO_EXTICR2 4001000C
+
+Symbol: AFIO_EXTICR2
+   Definitions
+      At line 19 in file main.s
+   Uses
+      None
+Comment: AFIO_EXTICR2 unused
+AFIO_EXTICR3 40010010
+
+Symbol: AFIO_EXTICR3
+   Definitions
+      At line 20 in file main.s
+   Uses
+      None
+Comment: AFIO_EXTICR3 unused
+AFIO_EXTICR4 40010014
+
+Symbol: AFIO_EXTICR4
+   Definitions
+      At line 21 in file main.s
+   Uses
+      None
+Comment: AFIO_EXTICR4 unused
+AFIO_MAPR 40010004
+
+Symbol: AFIO_MAPR
+   Definitions
+      At line 17 in file main.s
+   Uses
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Absolute symbols
+
+      None
+Comment: AFIO_MAPR unused
+Bit0 00000001
+
+Symbol: Bit0
+   Definitions
+      At line 96 in file main.s
+   Uses
+      None
+Comment: Bit0 unused
+Bit1 00000002
+
+Symbol: Bit1
+   Definitions
+      At line 97 in file main.s
+   Uses
+      At line 196 in file main.s
+      At line 261 in file main.s
+
+Bit10 00000400
+
+Symbol: Bit10
+   Definitions
+      At line 106 in file main.s
+   Uses
+      At line 180 in file main.s
+      At line 195 in file main.s
+
+Bit11 00000800
+
+Symbol: Bit11
+   Definitions
+      At line 107 in file main.s
+   Uses
+      None
+Comment: Bit11 unused
+Bit12 00001000
+
+Symbol: Bit12
+   Definitions
+      At line 108 in file main.s
+   Uses
+      None
+Comment: Bit12 unused
+Bit13 00002000
+
+Symbol: Bit13
+   Definitions
+      At line 109 in file main.s
+   Uses
+      None
+Comment: Bit13 unused
+Bit14 00004000
+
+Symbol: Bit14
+   Definitions
+      At line 110 in file main.s
+   Uses
+      At line 179 in file main.s
+
+
+
+ARM Macro Assembler    Page 3 Alphabetic symbol ordering
+Absolute symbols
+
+      At line 194 in file main.s
+      At line 200 in file main.s
+
+Bit15 00008000
+
+Symbol: Bit15
+   Definitions
+      At line 111 in file main.s
+   Uses
+      None
+Comment: Bit15 unused
+Bit16 00010000
+
+Symbol: Bit16
+   Definitions
+      At line 112 in file main.s
+   Uses
+      At line 158 in file main.s
+      At line 179 in file main.s
+      At line 194 in file main.s
+
+Bit17 00020000
+
+Symbol: Bit17
+   Definitions
+      At line 113 in file main.s
+   Uses
+      At line 165 in file main.s
+      At line 169 in file main.s
+
+Bit18 00040000
+
+Symbol: Bit18
+   Definitions
+      At line 114 in file main.s
+   Uses
+      At line 179 in file main.s
+      At line 194 in file main.s
+
+Bit19 00080000
+
+Symbol: Bit19
+   Definitions
+      At line 115 in file main.s
+   Uses
+      At line 179 in file main.s
+      At line 194 in file main.s
+
+Bit2 00000004
+
+Symbol: Bit2
+   Definitions
+      At line 98 in file main.s
+   Uses
+      At line 200 in file main.s
+Comment: Bit2 used once
+Bit20 00100000
+
+Symbol: Bit20
+
+
+
+ARM Macro Assembler    Page 4 Alphabetic symbol ordering
+Absolute symbols
+
+   Definitions
+      At line 116 in file main.s
+   Uses
+      At line 179 in file main.s
+      At line 194 in file main.s
+
+Bit21 00200000
+
+Symbol: Bit21
+   Definitions
+      At line 117 in file main.s
+   Uses
+      None
+Comment: Bit21 unused
+Bit22 00400000
+
+Symbol: Bit22
+   Definitions
+      At line 118 in file main.s
+   Uses
+      None
+Comment: Bit22 unused
+Bit23 00800000
+
+Symbol: Bit23
+   Definitions
+      At line 119 in file main.s
+   Uses
+      None
+Comment: Bit23 unused
+Bit24 01000000
+
+Symbol: Bit24
+   Definitions
+      At line 120 in file main.s
+   Uses
+      At line 185 in file main.s
+Comment: Bit24 used once
+Bit25 02000000
+
+Symbol: Bit25
+   Definitions
+      At line 121 in file main.s
+   Uses
+      At line 189 in file main.s
+Comment: Bit25 used once
+Bit26 04000000
+
+Symbol: Bit26
+   Definitions
+      At line 122 in file main.s
+   Uses
+      None
+Comment: Bit26 unused
+Bit27 08000000
+
+Symbol: Bit27
+   Definitions
+      At line 123 in file main.s
+
+
+
+ARM Macro Assembler    Page 5 Alphabetic symbol ordering
+Absolute symbols
+
+   Uses
+      None
+Comment: Bit27 unused
+Bit28 10000000
+
+Symbol: Bit28
+   Definitions
+      At line 124 in file main.s
+   Uses
+      None
+Comment: Bit28 unused
+Bit29 20000000
+
+Symbol: Bit29
+   Definitions
+      At line 125 in file main.s
+   Uses
+      None
+Comment: Bit29 unused
+Bit3 00000008
+
+Symbol: Bit3
+   Definitions
+      At line 99 in file main.s
+   Uses
+      None
+Comment: Bit3 unused
+Bit30 40000000
+
+Symbol: Bit30
+   Definitions
+      At line 126 in file main.s
+   Uses
+      None
+Comment: Bit30 unused
+Bit31 80000000
+
+Symbol: Bit31
+   Definitions
+      At line 127 in file main.s
+   Uses
+      None
+Comment: Bit31 unused
+Bit4 00000010
+
+Symbol: Bit4
+   Definitions
+      At line 100 in file main.s
+   Uses
+      At line 200 in file main.s
+      At line 207 in file main.s
+
+Bit5 00000020
+
+Symbol: Bit5
+   Definitions
+      At line 101 in file main.s
+   Uses
+      At line 207 in file main.s
+
+
+
+ARM Macro Assembler    Page 6 Alphabetic symbol ordering
+Absolute symbols
+
+Comment: Bit5 used once
+Bit6 00000040
+
+Symbol: Bit6
+   Definitions
+      At line 102 in file main.s
+   Uses
+      At line 210 in file main.s
+Comment: Bit6 used once
+Bit7 00000080
+
+Symbol: Bit7
+   Definitions
+      At line 103 in file main.s
+   Uses
+      At line 209 in file main.s
+Comment: Bit7 used once
+Bit8 00000100
+
+Symbol: Bit8
+   Definitions
+      At line 104 in file main.s
+   Uses
+      None
+Comment: Bit8 unused
+Bit9 00000200
+
+Symbol: Bit9
+   Definitions
+      At line 105 in file main.s
+   Uses
+      None
+Comment: Bit9 unused
+BitAlias_BASE 22000000
+
+Symbol: BitAlias_BASE
+   Definitions
+      At line 82 in file main.s
+   Uses
+      At line 85 in file main.s
+      At line 87 in file main.s
+
+DlyI 20000204
+
+Symbol: DlyI
+   Definitions
+      At line 89 in file main.s
+   Uses
+      At line 248 in file main.s
+Comment: DlyI used once
+DlyJ 20000208
+
+Symbol: DlyJ
+   Definitions
+      At line 90 in file main.s
+   Uses
+      At line 250 in file main.s
+Comment: DlyJ used once
+DlyK 2000020C
+
+
+
+ARM Macro Assembler    Page 7 Alphabetic symbol ordering
+Absolute symbols
+
+
+Symbol: DlyK
+   Definitions
+      At line 91 in file main.s
+   Uses
+      At line 252 in file main.s
+Comment: DlyK used once
+FLASH_ACR 40022000
+
+Symbol: FLASH_ACR
+   Definitions
+      At line 73 in file main.s
+   Uses
+      At line 172 in file main.s
+Comment: FLASH_ACR used once
+Flag1 20000200
+
+Symbol: Flag1
+   Definitions
+      At line 84 in file main.s
+   Uses
+      At line 246 in file main.s
+      At line 259 in file main.s
+
+GPIOA_BASE 40010800
+
+Symbol: GPIOA_BASE
+   Definitions
+      At line 24 in file main.s
+   Uses
+      At line 25 in file main.s
+      At line 26 in file main.s
+      At line 27 in file main.s
+      At line 28 in file main.s
+      At line 29 in file main.s
+      At line 30 in file main.s
+      At line 31 in file main.s
+
+GPIOA_BRR 40010814
+
+Symbol: GPIOA_BRR
+   Definitions
+      At line 30 in file main.s
+   Uses
+      None
+Comment: GPIOA_BRR unused
+GPIOA_BSRR 40010810
+
+Symbol: GPIOA_BSRR
+   Definitions
+      At line 29 in file main.s
+   Uses
+      None
+Comment: GPIOA_BSRR unused
+GPIOA_CRH 40010804
+
+Symbol: GPIOA_CRH
+   Definitions
+      At line 26 in file main.s
+
+
+
+ARM Macro Assembler    Page 8 Alphabetic symbol ordering
+Absolute symbols
+
+   Uses
+      At line 205 in file main.s
+Comment: GPIOA_CRH used once
+GPIOA_CRL 40010800
+
+Symbol: GPIOA_CRL
+   Definitions
+      At line 25 in file main.s
+   Uses
+      None
+Comment: GPIOA_CRL unused
+GPIOA_IDR 40010808
+
+Symbol: GPIOA_IDR
+   Definitions
+      At line 27 in file main.s
+   Uses
+      None
+Comment: GPIOA_IDR unused
+GPIOA_LCKR 40010818
+
+Symbol: GPIOA_LCKR
+   Definitions
+      At line 31 in file main.s
+   Uses
+      None
+Comment: GPIOA_LCKR unused
+GPIOA_ODR 4001080C
+
+Symbol: GPIOA_ODR
+   Definitions
+      At line 28 in file main.s
+   Uses
+      None
+Comment: GPIOA_ODR unused
+GPIOC_BASE 40011000
+
+Symbol: GPIOC_BASE
+   Definitions
+      At line 34 in file main.s
+   Uses
+      At line 35 in file main.s
+      At line 36 in file main.s
+      At line 37 in file main.s
+      At line 38 in file main.s
+      At line 39 in file main.s
+      At line 40 in file main.s
+      At line 41 in file main.s
+
+GPIOC_BRR 40011014
+
+Symbol: GPIOC_BRR
+   Definitions
+      At line 40 in file main.s
+   Uses
+      None
+Comment: GPIOC_BRR unused
+GPIOC_BSRR 40011010
+
+
+
+
+ARM Macro Assembler    Page 9 Alphabetic symbol ordering
+Absolute symbols
+
+Symbol: GPIOC_BSRR
+   Definitions
+      At line 39 in file main.s
+   Uses
+      None
+Comment: GPIOC_BSRR unused
+GPIOC_CRH 40011004
+
+Symbol: GPIOC_CRH
+   Definitions
+      At line 36 in file main.s
+   Uses
+      None
+Comment: GPIOC_CRH unused
+GPIOC_CRL 40011000
+
+Symbol: GPIOC_CRL
+   Definitions
+      At line 35 in file main.s
+   Uses
+      None
+Comment: GPIOC_CRL unused
+GPIOC_IDR 40011008
+
+Symbol: GPIOC_IDR
+   Definitions
+      At line 37 in file main.s
+   Uses
+      None
+Comment: GPIOC_IDR unused
+GPIOC_LCKR 40011018
+
+Symbol: GPIOC_LCKR
+   Definitions
+      At line 41 in file main.s
+   Uses
+      None
+Comment: GPIOC_LCKR unused
+GPIOC_ODR 4001100C
+
+Symbol: GPIOC_ODR
+   Definitions
+      At line 38 in file main.s
+   Uses
+      None
+Comment: GPIOC_ODR unused
+MSP_TOP 20005000
+
+Symbol: MSP_TOP
+   Definitions
+      At line 77 in file main.s
+   Uses
+      At line 132 in file main.s
+Comment: MSP_TOP used once
+NVIC_AIRCR E000ED0C
+
+Symbol: NVIC_AIRCR
+   Definitions
+      At line 61 in file main.s
+
+
+
+ARM Macro Assembler    Page 10 Alphabetic symbol ordering
+Absolute symbols
+
+   Uses
+      None
+Comment: NVIC_AIRCR unused
+NVIC_BASE E000E000
+
+Symbol: NVIC_BASE
+   Definitions
+      At line 54 in file main.s
+   Uses
+      At line 55 in file main.s
+      At line 57 in file main.s
+      At line 59 in file main.s
+      At line 61 in file main.s
+
+NVIC_IRQPRI E000E400
+
+Symbol: NVIC_IRQPRI
+   Definitions
+      At line 57 in file main.s
+   Uses
+      None
+Comment: NVIC_IRQPRI unused
+NVIC_SETEN E000E010
+
+Symbol: NVIC_SETEN
+   Definitions
+      At line 55 in file main.s
+   Uses
+      None
+Comment: NVIC_SETEN unused
+NVIC_VECTTBL E000ED08
+
+Symbol: NVIC_VECTTBL
+   Definitions
+      At line 59 in file main.s
+   Uses
+      None
+Comment: NVIC_VECTTBL unused
+PSP_TOP 20004E00
+
+Symbol: PSP_TOP
+   Definitions
+      At line 79 in file main.s
+   Uses
+      At line 238 in file main.s
+Comment: PSP_TOP used once
+RCC_AHBENR 40021014
+
+Symbol: RCC_AHBENR
+   Definitions
+      At line 8 in file main.s
+   Uses
+      None
+Comment: RCC_AHBENR unused
+RCC_APB1ENR 4002101C
+
+Symbol: RCC_APB1ENR
+   Definitions
+      At line 10 in file main.s
+
+
+
+ARM Macro Assembler    Page 11 Alphabetic symbol ordering
+Absolute symbols
+
+   Uses
+      None
+Comment: RCC_APB1ENR unused
+RCC_APB1RSTR 40021010
+
+Symbol: RCC_APB1RSTR
+   Definitions
+      At line 7 in file main.s
+   Uses
+      None
+Comment: RCC_APB1RSTR unused
+RCC_APB2ENR 40021018
+
+Symbol: RCC_APB2ENR
+   Definitions
+      At line 9 in file main.s
+   Uses
+      At line 199 in file main.s
+Comment: RCC_APB2ENR used once
+RCC_APB2RSTR 4002100C
+
+Symbol: RCC_APB2RSTR
+   Definitions
+      At line 6 in file main.s
+   Uses
+      None
+Comment: RCC_APB2RSTR unused
+RCC_BASE 40021000
+
+Symbol: RCC_BASE
+   Definitions
+      At line 2 in file main.s
+   Uses
+      At line 3 in file main.s
+      At line 4 in file main.s
+      At line 5 in file main.s
+      At line 6 in file main.s
+      At line 7 in file main.s
+      At line 8 in file main.s
+      At line 9 in file main.s
+      At line 10 in file main.s
+      At line 11 in file main.s
+      At line 12 in file main.s
+
+RCC_BDCR 40021020
+
+Symbol: RCC_BDCR
+   Definitions
+      At line 11 in file main.s
+   Uses
+      None
+Comment: RCC_BDCR unused
+RCC_CFGR 40021004
+
+Symbol: RCC_CFGR
+   Definitions
+      At line 4 in file main.s
+   Uses
+      At line 177 in file main.s
+
+
+
+ARM Macro Assembler    Page 12 Alphabetic symbol ordering
+Absolute symbols
+
+      At line 192 in file main.s
+
+RCC_CIR 40021008
+
+Symbol: RCC_CIR
+   Definitions
+      At line 5 in file main.s
+   Uses
+      None
+Comment: RCC_CIR unused
+RCC_CR 40021000
+
+Symbol: RCC_CR
+   Definitions
+      At line 3 in file main.s
+   Uses
+      At line 156 in file main.s
+      At line 183 in file main.s
+
+RCC_CSR 40021024
+
+Symbol: RCC_CSR
+   Definitions
+      At line 12 in file main.s
+   Uses
+      None
+Comment: RCC_CSR unused
+SETENA0 E000E100
+
+Symbol: SETENA0
+   Definitions
+      At line 63 in file main.s
+   Uses
+      None
+Comment: SETENA0 unused
+SETENA1 E000E104
+
+Symbol: SETENA1
+   Definitions
+      At line 64 in file main.s
+   Uses
+      None
+Comment: SETENA1 unused
+SYSTICKCSR E000E010
+
+Symbol: SYSTICKCSR
+   Definitions
+      At line 69 in file main.s
+   Uses
+      At line 232 in file main.s
+Comment: SYSTICKCSR used once
+SYSTICKRVR E000E014
+
+Symbol: SYSTICKRVR
+   Definitions
+      At line 70 in file main.s
+   Uses
+      At line 228 in file main.s
+Comment: SYSTICKRVR used once
+
+
+
+ARM Macro Assembler    Page 13 Alphabetic symbol ordering
+Absolute symbols
+
+SysTick_BASE E000E010
+
+Symbol: SysTick_BASE
+   Definitions
+      At line 68 in file main.s
+   Uses
+      At line 69 in file main.s
+      At line 70 in file main.s
+
+SysTim 20000210
+
+Symbol: SysTim
+   Definitions
+      At line 92 in file main.s
+   Uses
+      At line 254 in file main.s
+      At line 337 in file main.s
+
+USART1_BASE 40013800
+
+Symbol: USART1_BASE
+   Definitions
+      At line 44 in file main.s
+   Uses
+      At line 45 in file main.s
+      At line 46 in file main.s
+      At line 47 in file main.s
+      At line 48 in file main.s
+      At line 49 in file main.s
+      At line 50 in file main.s
+      At line 51 in file main.s
+
+USART1_BRR 40013808
+
+Symbol: USART1_BRR
+   Definitions
+      At line 47 in file main.s
+   Uses
+      At line 215 in file main.s
+Comment: USART1_BRR used once
+USART1_CR1 4001380C
+
+Symbol: USART1_CR1
+   Definitions
+      At line 48 in file main.s
+   Uses
+      At line 220 in file main.s
+Comment: USART1_CR1 used once
+USART1_CR2 40013810
+
+Symbol: USART1_CR2
+   Definitions
+      At line 49 in file main.s
+   Uses
+      None
+Comment: USART1_CR2 unused
+USART1_CR3 40013814
+
+Symbol: USART1_CR3
+
+
+
+ARM Macro Assembler    Page 14 Alphabetic symbol ordering
+Absolute symbols
+
+   Definitions
+      At line 50 in file main.s
+   Uses
+      None
+Comment: USART1_CR3 unused
+USART1_DR 40013804
+
+Symbol: USART1_DR
+   Definitions
+      At line 46 in file main.s
+   Uses
+      At line 317 in file main.s
+Comment: USART1_DR used once
+USART1_GTPR 40013818
+
+Symbol: USART1_GTPR
+   Definitions
+      At line 51 in file main.s
+   Uses
+      None
+Comment: USART1_GTPR unused
+USART1_SR 40013800
+
+Symbol: USART1_SR
+   Definitions
+      At line 45 in file main.s
+   Uses
+      At line 320 in file main.s
+Comment: USART1_SR used once
+b_05s 22004004
+
+Symbol: b_05s
+   Definitions
+      At line 87 in file main.s
+   Uses
+      At line 266 in file main.s
+      At line 345 in file main.s
+
+b_flas 22004000
+
+Symbol: b_flas
+   Definitions
+      At line 85 in file main.s
+   Uses
+      None
+Comment: b_flas unused
+95 symbols
+441 symbols in table
